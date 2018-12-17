@@ -23,7 +23,7 @@ $(document).ready(function($){
 		    }
 		});
 
-		var owls = $(".owl-carousel-partner");
+		var owls = $(".owl-carousel-category");
 	  	owls.owlCarousel({
 	  		margin:0, 							
 	  		loop:true, 							
@@ -39,7 +39,7 @@ $(document).ready(function($){
 		            items:2,									            									            
 		        },
 		        600:{
-		            items:3,          
+		            items:4,          
 		        },
 		        1000:{
 		            items:4,  
