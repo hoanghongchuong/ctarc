@@ -8,13 +8,18 @@
         <div class=""></div>
             <div class="album-image slider_product">
                 <div class="slider-for">
+                    @if(count($album_hinh) > 0)
                     @foreach($album_hinh as $album)
                     <div class="item">
                         <img src="{{asset('upload/albumnews/'.$album->photo)}}" alt="image"  draggable="false"/>
                     </div>
                     @endforeach
+                    @else
+                    <div class="item">
+                        <img src="{{asset('upload/news/'.$news_detail->photo)}}" alt="image"  draggable="false"/>
+                    </div>
+                    @endif
                 </div>
-
                 <div class="slider-nav">
                     @foreach($album_hinh as $album)
                     <div class="item">

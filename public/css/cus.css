@@ -1,3 +1,4 @@
+
 .slider-category h1{
 	margin-top: 0px;
 	font-size: 22px;
@@ -68,4 +69,7 @@
 }
 ._item a{
     color: #fff;
+}
+._item img{
+    /*height: 145px;*/
 }

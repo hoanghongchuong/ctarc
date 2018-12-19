@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/css/slick.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('public/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('public/css/cus.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/phone.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('public/css/responsive.css')}}" />
     <script src="{{ asset('public/js/jquery-2.1.4.min.js')}}"></script>
     
@@ -56,11 +57,16 @@
             @include('templates.layout.header')
             @yield('content')       
             @include('templates.layout.footer')
-        <div class="quick-alo-phone quick-alo-green quick-alo-show" id="quick-alo-phoneIcon">
-          <a href="tel:{{@$setting->hotline}}" title="Liên hệ nhanh">
-          <!-- <div class="quick-alo-ph-circle"></div> -->
-          <div class="quick-alo-ph-circle-fill"></div>
-          <div class="quick-alo-ph-img-circle"></div></a>
+        <div class="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon" style="left: -50px; bottom: 0; display: block;position: fixed; z-index: 99999999999999999999999">
+          <div class="phonering-alo-ph-circle"></div>
+            <div class="phonering-alo-ph-circle-fill"></div>
+              <a href="tel:"></a>
+               <div class="phonering-alo-ph-img-circle">
+                <a href="tel:{{$setting->phone}}"></a>
+                <a href="tel:{{$setting->phone}}" class="pps-btn-img " title="{{$setting->phone}}">
+                    <img src="https://i.imgur.com/v8TniL3.png" alt="" width="50" onmouseover="this.src = 'https://i.imgur.com/v8TniL3.png';" onmouseout="this.src = 'https://i.imgur.com/v8TniL3.png';">
+                </a>
+          </div>        
         </div>
         <div id="fb-root"></div>
         <script>(function(d, s, id) {

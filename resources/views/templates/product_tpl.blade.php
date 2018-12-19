@@ -1,37 +1,42 @@
 @extends('index')
 @section('content')
-<?php
-    $setting = Cache::get('setting');
-?>
-<content>
+@include('templates.layout.slider')
+<div class="content-box">
     <div class="container">
-        @foreach($cate_pro as $category)
-        <div class="row"> <!-- mỗi 1 row là 1 mục  -->
-            <div class="col-xs-8 col-md-11 col-large-11 title-content">
-                <h1>{{$category->name}}</h1>
+        <div class="row">
+            <div class="col-md-3 col-xs-12 left hidden-xs">                   
+                <ul class="menu-cate">
+                    @foreach($cate_pro as $cate)
+                    <li class="parent"><a href="{{url('san-pham/'.$cate->alias)}}">{{$cate->name}}</a></li>
+                    <?php $cateChildren = DB::table('product_categories')->where('status',1)->where('parent_id', $cate->id)->get(); ?>
+                    @if(count($cateChildren) > 0)
+                        @foreach($cateChildren as $child)
+                        <li><a href="{{url('san-pham/'.$child->alias)}}" class="">{{$child->name}}</a></li>
+                        @endforeach
+                    @endif
+                    @endforeach
+                </ul>                    
             </div>
-            <div class="col-xs-4 col-md-1 col-large-1 next-content">
-                <p><a href="{{url('san-pham/'.$category->alias)}}">Xem thêm</a></p>
-            </div>
-            <?php $products = DB::table('products')->where('com','san-pham')
-                ->where('cate_id',$category->id)
-                ->take(8)
-                ->get(); 
-            ?>
-            @foreach($products as $item)
-            <div class="col-xs-6 col-md-3 col-large-3 content" >
-                <div class="images">
-                    <a href="{{url('san-pham/'.@$item->alias.'.html')}}"><img src="{{asset('upload/product/'.@$item->photo)}}" alt="{{$item->name}}"></a>
+            <div class="col-md-9 col-xs-12">
+                <div class="slider-category">
+                    <h1>Sản phẩm</h1>
+                    <div class="owl-carousel-category">
+                        @foreach($products->chunk(2) as $chunks)
+                        <div class="item">
+                            @foreach($chunks as $item)
+                            <div class="_item">
+                                <a href="{{url('san-pham/'.$item->alias.'.html')}}" title="{{$item->name}}">
+                                    <img src="{{asset('upload/product/'.$item->photo)}}" alt="{{$item->name}}" />
+                                    <p class="name-project-home">{{$item->name}}</p>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="title">
-                    <h4><a href="{{url('san-pham/'.@$item->alias.'.html')}}" title="">{{@$item->name}}</a></h4>
-                    <p>Giá: <strong>{{number_format(@$item->price)}}</strong> vnđ</p>
-                </div>
             </div>
-            @endforeach
         </div>
-        @endforeach
     </div>
-</content>
-
+</div>
 @endsection

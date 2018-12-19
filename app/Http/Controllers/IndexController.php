@@ -112,7 +112,7 @@ class IndexController extends Controller {
 			->where('com','san-pham')
 			->orderby('stt','asc')->get();
 		
-		// $products = DB::table('products')->where('status',1)->where('com','san-pham')->paginate(18);
+		$products = DB::table('products')->where('status',1)->where('com','san-pham')->orderBy('id','desc')->get();
 		$com='san-pham';		
 		$title = "Sản phẩm";
 		$keyword = "Sản phẩm";
@@ -124,16 +124,6 @@ class IndexController extends Controller {
 		return view('templates.product_tpl', compact('title','keyword','description','products', 'com','cate_pro'));
 	}
 
-	public function getProductOld(Request $req)
-	{
-		
-		$products = DB::table('products')->where('status',1)->where('com','san-pham')->paginate(18);
-		$com='san-pham';		
-		$title = "Sản phẩm đã thi công";
-		$keyword = "Sản phẩm đã thi công";
-		$description = "Sản phẩm đã thi công";
-		return view('templates.product_old', compact('title','keyword','description','products', 'com'));
-	}
 
 	public function getProductList($id, Request $req)
 	{
@@ -149,7 +139,7 @@ class IndexController extends Controller {
         			$array_cate[] = $cate->id;
         		}
         	}        	
-        	$products = Products::whereIn('cate_id', $array_cate)->orderBy('id','desc')->paginate(20);            
+        	$products = Products::whereIn('cate_id', $array_cate)->orderBy('id','desc')->get();            
             if (!empty($product_cate->title)) {
                 $title = $product_cate->title;
             } else {
@@ -198,9 +188,10 @@ class IndexController extends Controller {
 			$ids_session = $_SESSION['daxem'];
 			$productDaXem = DB::table('products')->whereIn('id', $ids_session)->where('status', 1)->get();
 
-			$album_hinh = DB::table('images')->select()->where('product_id',$product_detail->id)->orderby('id','asc')->get();		
+			$album_hinh = DB::table('images')->select()->where('product_id',$product_detail->id)->orderby('id','asc')->get();
+				
 			$cateProduct = DB::table('product_categories')->select('name','alias')->where('id',$product_detail->cate_id)->first();
-			$productSameCate = DB::table('products')->select()->where('status',1)->where('id','<>',$product_detail->id)->where('cate_id',$product_detail->cate_id)->orderby('stt','desc')->take(4)->get();			
+			$productSameCate = DB::table('products')->select()->where('status',1)->where('id','<>',$product_detail->id)->where('cate_id',$product_detail->cate_id)->orderby('stt','desc')->take(12)->get();			
 			
 			// Cấu hình SEO
 			if(!empty($product_detail->title)){

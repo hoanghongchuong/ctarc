@@ -38,14 +38,13 @@ header{
 }
 .menu ul.list-menu li{
 	display: inline-block;
-	margin-right: 20px;
-	
+	margin-right: 0px;
 }
 .menu ul li a{
 	font-size: 15px;
 	text-transform: uppercase;
 	color: #fff;
-	padding:15px 15px;
+	padding:15px 10px;
 }
 .menu ul.list-menu li:hover a{
 	background: #b88918;
