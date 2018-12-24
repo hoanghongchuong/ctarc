@@ -9,7 +9,9 @@
         <div class="row">
             <div class="col-md-9 col-xs-12 left">
                 <div class="content-about">
-                {!! $about->content !!}
+                <p style="text-transform: uppercase;">{{$data->name}}</p>
+                <p>Chức vụ: {{$data->position}}</p>
+                {!! $data->content !!}
                 </div>
             </div>
             <div class="col-md-3 col-xs-12 right">

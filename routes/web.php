@@ -15,6 +15,7 @@
 
 Route::get('/', ['as'=>'index', 'uses'=>'IndexController@index']);
 Route::get('gioi-thieu',['as'=>'getAbout', 'uses'=>'IndexController@getAbout']);
+Route::get('thanh-vien/{alias}',['as'=>'getMember', 'uses'=>'IndexController@getMember']);
 Route::post('cartajax/add', ['as' => 'addProductToCartAjax', 'uses' => 'IndexController@addCartAjax']);
 
 Route::get('lien-he',['as'=>'getContact', 'uses'=>'ContactController@getContact']);
@@ -26,16 +27,17 @@ Route::get('loadmore/project','IndexController@loadmoreProject')->name('loadmore
 
 Route::get('tim-kiem',['as'=>'search', 'uses'=>'IndexController@search']);
 Route::post('newsletter',['as'=>'postNewsletter', 'uses'=>'IndexController@postNewsletter']);
-Route::get('decor',['as'=>'getProduct', 'uses'=>'IndexController@getProduct']);
+Route::get('noi-that',['as'=>'getProduct', 'uses'=>'IndexController@getProduct']);
+
 Route::get('san-pham/{alias}.html','IndexController@getProductDetail')->name('detailProduct');
 Route::get('san-pham/{id}',['as'=>'getProductList', 'uses'=>'IndexController@getProductList']);
 Route::get('danh-muc/{alias}', 'IndexController@getProductByCate')->name('detailCategory');
 Route::get('product/filter', 'IndexController@productFilder')->name('product.filter');
 
 
-Route::get('cong-trinh',['as'=>'getListNews', 'uses'=>'IndexController@getNews']);
-Route::get('cong-trinh/{alias}.html',['as'=>'getNewsDetail', 'uses'=>'IndexController@getNewsDetail']);
-Route::get('cong-trinh/{alias}',['as'=>'getListNews', 'uses'=>'IndexController@getListNews']);
+Route::get('kien-truc',['as'=>'getListNews', 'uses'=>'IndexController@getNews']);
+Route::get('kien-truc/{alias}.html',['as'=>'getNewsDetail', 'uses'=>'IndexController@getNewsDetail']);
+Route::get('kien-truc/{alias}',['as'=>'getListNews', 'uses'=>'IndexController@getListNews']);
 
 Route::get('thanh-toan',['as'=>'thanhtoan', 'uses' => 'IndexController@thanhtoan']);
 // Route::get('danh-muc/{alias}',['as'=>'getProductChild', 'uses'=>'IndexController@getProductChild']);

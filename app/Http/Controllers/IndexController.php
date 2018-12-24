@@ -114,9 +114,9 @@ class IndexController extends Controller {
 		
 		$products = DB::table('products')->where('status',1)->where('com','san-pham')->orderBy('id','desc')->get();
 		$com='san-pham';		
-		$title = "Sản phẩm";
-		$keyword = "Sản phẩm";
-		$description = "Sản phẩm";
+		$title = "Nội thất";
+		$keyword = "Nội thất";
+		$description = "Nội thất";
 		// $img_share = asset('upload/hinhanh/'.$banner_danhmuc->photo);
 		
 		// return view('templates.product_tpl', compact('product','banner_danhmuc','doitac','camnhan_khachhang','keyword','description','title','img_share'));
@@ -212,7 +212,8 @@ class IndexController extends Controller {
 
 	public function getAbout()
 	{
-		$about = DB::table('about')->where('com','gioi-thieu')->first();		
+		$about = DB::table('about')->where('com','gioi-thieu')->first();
+		$partners =  DB::table('partner')->get();		
         $com = 'gioi-thieu';		
 		 //Cấu hình SEO
 		$title = 'Giới thiệu';
@@ -220,7 +221,14 @@ class IndexController extends Controller {
 		$description = 'Giới thiệu';
 		// End cấu hình SEO
 
-		return view('templates.about_tpl', compact('about','keyword','description','title','img_share','com'));
+		return view('templates.about_tpl', compact('about','keyword','description','title','img_share','com','partners'));
+	}
+	public function getMember($alias)
+	{
+		$partners =  DB::table('partner')->get();		
+        $com = 'gioi-thieu';
+		$data = DB::table('partner')->where('url',$alias)->first();
+		return view('templates.thanhvien', compact('data','partners','com'));
 	}
 	public function baogia()
 	{
@@ -252,9 +260,9 @@ class IndexController extends Controller {
 		$cate_pro = DB::table('news_categories')->where('status',1)->where('parent_id',0)->orderby('id','asc')->get();
 		$com='tin-tuc';
 		// Cấu hình SEO
-		$title = "Công trình";
-		$keyword = "Công trình";
-		$description = "Công trình";
+		$title = "Kiến trúc";
+		$keyword = "Kiến trúc";
+		$description = "Kiến trúc";
 		$img_share = '';
 		// End cấu hình SEO
 		return view('templates.news_tpl', compact('tintuc','keyword','description','title','img_share','com','cateNews','hot_news','cate_pro'));

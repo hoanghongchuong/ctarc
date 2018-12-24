@@ -9,7 +9,7 @@
                 <span class="">{{$setting->address}}</span> &nbsp;Hotline: {{$setting->phone}} - {{$setting->hotline}}
             </div>
             <div class="pull-right">
-                <span>Design by Hungthinhads.com</span>
+                <span class="fix-footer">Design by Hungthinhads.com</span>
             </div>
         </div>
     </div>

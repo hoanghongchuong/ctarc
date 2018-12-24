@@ -9,8 +9,15 @@ ul li{list-style: none;}
 body{
 	/*font-family: 'Hel';*/
 	font-size: 14px;
-	background-color: #5E3610 !important;
+	/*background-color: #5E3610 !important;*/
+	background: url('../images/bg.jpg');
+	background-size: cover;
+	/*opacity: 0.7;*/
 }
+/*.fix-bg{
+	background-color: #5E3610 !important;
+	padding: 30px;
+}*/
 a:hover {
     text-decoration: none !important;
 }
@@ -34,7 +41,7 @@ header{
 	margin-top: 30px;
 }
 .menu ul.list-menu{
-	margin-top: 30px;
+	margin-top: 40px;
 }
 .menu ul.list-menu li{
 	display: inline-block;

@@ -53,7 +53,7 @@
                     {!! $news_detail->content !!}
                 </div>
                 <div class="lienquan">
-                    <p class="title-lienquan"><i class="fa fa-chevron-right"></i>Các công trình khác</p>
+                    <p class="title-lienquan"><i class="fa fa-chevron-right"></i>Bài viết khác</p>
                     <div class="list-item-box">
                         @foreach($newsSameCate as $item)
                         <div class="_item col-md-2 col-xs-6">

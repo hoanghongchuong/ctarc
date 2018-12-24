@@ -145,12 +145,12 @@
 
 			    <div class="col-md-6">
 			    	
-			    	<!-- <div class="form-group">
+			    	<div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="noibat" >Nổi bật
 				    	</label>
 					</div>
-					@if($_GET['type']!='tin-tuc' && $_GET['type']!='tuyen-dung')
+					<!-- @if($_GET['type']!='tin-tuc' && $_GET['type']!='tuyen-dung')
 					<div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="home"> Hiển thị trang chủ

@@ -17,21 +17,22 @@
                     <li class=""><a href="{{url('')}}">Trang chủ</a></li>
                     <li class=""><a href="{{url('gioi-thieu')}}">Giới thiệu</a></li>
                     <li class="dropdown submenux">                              
-                        <a href="{{url('cong-trinh')}}">Công trình                         
-                        </a>
-                        <ul class="dropdown-menu dropmenux">
-                            @foreach($categories_post as $post)
-                            <li><a href="{{url('cong-trinh/'.$post->alias)}}">{{$post->name}}</a></li>                                
-                            @endforeach                          
-                        </ul>                            
-                    </li>
-                    <li class="dropdown submenux">                              
-                        <a href="{{url('decor')}}">Decor                         
+                        <a href="{{url('noi-that')}}">Nội thất                         
                         </a>
                         <ul class="dropdown-menu dropmenux">
                             @foreach($categories as $category)
                             <li><a href="{{url('san-pham/'.$category->alias)}}">{{$category->name}}</a></li>                                
                             @endforeach                           
+                        </ul>
+                                                    
+                    </li>
+                    <li class="dropdown submenux">                              
+                        <a href="{{url('kien-truc')}}">Kiến trúc                         
+                        </a>
+                        <ul class="dropdown-menu dropmenux">
+                            @foreach($categories_post as $post)
+                            <li><a href="{{url('kien-truc/'.$post->alias)}}">{{$post->name}}</a></li>                                
+                            @endforeach                          
                         </ul>                            
                     </li>
                     <li class=""><a href="{{url('lien-he')}}">Liên hệ</a></li>

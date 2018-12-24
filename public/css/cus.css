@@ -70,6 +70,27 @@
 ._item a{
     color: #fff;
 }
-._item img{
-    /*height: 145px;*/
+._item img {
+    height: 108px;
+}
+.owl-carousel-project .item{
+    position: relative;
+}
+.owl-carousel-project .item p{
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0.8;
+    margin-bottom: 0px;
+    padding: 10px 0;
+}
+.fix-footer{
+    color: #5E3610;
+}
+.member{
+    width: 100%;
+    float: left;
+    margin-bottom: 40px;
 }

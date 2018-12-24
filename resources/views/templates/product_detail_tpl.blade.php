@@ -53,11 +53,11 @@
             <div class="col-md-9 col-xs-12">
                 <h1 class="name_detail"><i class="fa fa-chevron-right"></i>{{$product_detail->name}}</h1>
                 <div class="shot-des">
-                    <p>Giá: <span style="font-size: 20px;">{{number_format($product_detail->price)}}</span> vnđ</p>
+                   <!--  <p>Giá: <span style="font-size: 20px;">{{number_format($product_detail->price)}}</span> vnđ</p> -->
                     {!! $product_detail->content !!}
                 </div>
                 <div class="lienquan">
-                    <p class="title-lienquan"><i class="fa fa-chevron-right"></i>Sản phẩm khác</p>
+                    <p class="title-lienquan"><i class="fa fa-chevron-right"></i>Bài viết khác</p>
                     <div class="list-item-box">
                         @foreach($productSameCate as $item)
                         <div class="_item col-md-2 col-xs-6">

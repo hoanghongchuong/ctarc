@@ -29,7 +29,9 @@ class PartnerController extends Controller
     	$data->name = $req->name;
     	$data->photo = $img_name; 
     	$data->com = "doi-tac";
-    	$data->url = $req->txtLink;
+        $data->url = str_slug($req->txtLink);
+    	$data->content = $req->content;
+        $data->position = $req->position;
     	if($req->status=='on'){
             $data->status = 1;
         }else{
@@ -58,7 +60,9 @@ class PartnerController extends Controller
             }
         }
     	$data->name = $req->name;
-    	$data->url = $req->txtLink;
+    	$data->url = str_slug($req->name);
+        $data->content = $req->content;
+        $data->position = $req->position;
     	if($req->status=='on'){
             $data->status = 1;
         }else{

@@ -38,11 +38,21 @@
               
             <div class="clearfix"></div>
             <div class="col-md-6">
-              <div class="form-group">
-                <label for="">Tên</label>
-                <input type="text" name="name" class="form-control" value="{{$data->name}}">
-               
-              </div>
+                <div class="form-group">
+                    <label for="">Tên</label>
+                    <input type="text" name="name" class="form-control" value="{{$data->name}}">               
+                </div>
+                <div class="form-group">
+                    <label for="">Chức vụ</label>
+                    <input type="text" name="position" value="{{$data->position}}" class="form-control" placeholder="">
+                </div>
+                
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Mô tả</label>
+                    <textarea name="content" id="txtContent" class="form-control">{!! $data->content !!}</textarea>
+                </div>
             </div>
             <!-- <div class="col-md-6">
               <div class="form-group">

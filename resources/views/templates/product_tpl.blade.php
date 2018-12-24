@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-9 col-xs-12">
                 <div class="slider-category">
-                    <h1>Sản phẩm</h1>
+                    <h1>Nội thất</h1>
                     <div class="owl-carousel-category">
                         @foreach($products->chunk(2) as $chunks)
                         <div class="item">
