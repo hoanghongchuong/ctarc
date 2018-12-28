@@ -50,11 +50,12 @@ header{
 .menu ul li a{
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #fff;
+	color: #8c7272;
 	padding:15px 10px;
 }
 .menu ul.list-menu li:hover a{
-	background: #b88918;
+	color: #fff;
+	background-color: transparent;
 
 }
 .dropmenux{
@@ -118,12 +119,14 @@ header{
 footer{
 	width: 100%;
 	float: left;
+	background-color: #1E1108;
+
 }
 footer .row{
 	color: #fff;
 	margin-top: 30px;
-	margin-bottom: 20px;
-	background-color: #231406;
+	/*margin-bottom: 20px;*/
+	/*background-color: #231406;*/
 	padding:10px;
 }
 .vk-header__search {
@@ -268,4 +271,11 @@ ul.menu-cate li:hover a{
 .slider-nav .item{
 	margin-left: 5px;
 	margin-right: 5px;
+}
+.name_company{
+	font-size: 15px;
+	text-transform: uppercase;
+}
+footer a{
+	color: #fff;
 }

@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-@section('controller','Quản lý '.$trang)
+@section('controller','Quản lý liên kết')
 @section('action','Edit')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -22,10 +22,10 @@
         <div class="box-body">
         	<form method="post" action="backend/lienket/edit?id={{$id}}&type={{ @$_GET['type'] }}" enctype="multipart/form-data">
         		<input type="hidden" name="_token" value="{!! csrf_token() !!}" />
-        		
+        		<input type="hidden" name="txtCom" value="{{ @$_GET['type'] }}"/>
       			<div class="row">
               		<div class="col-md-6 col-xs-12">
-              		@if($_GET['type']!='catalog')	
+              		@if($_GET['type']!='lien-ket')	
 						<div class="form-group @if ($errors->first('fImages')!='') has-error @endif">
 							<div class="form-group">
 								<img src="{{ asset('upload/hinhanh/'.$data->photo) }}" onerror="this.src='{{asset('public/admin_assets/images/no-image.jpg')}}'" style="max-height: 200px;" class="img-responsive"  alt="NO PHOTO" />
@@ -88,7 +88,7 @@
 					      	<textarea name="txtDesc" rows="5" class="form-control">{{ $data->mota }}</textarea>
 						</div> -->						
 					</div>
-					@if($_GET['type']!='quang-cao')
+					@if($_GET['type']!='lien-ket')
 					<div class="col-md-12 col-xs-12">
 						<div class="box box-info">
 			                <div class="box-header">
@@ -104,7 +104,7 @@
 			        	</div>			        	
 					</div>
 					@endif
-					<input type="hidden" name="txtCom" value="{{ @$_GET['type'] }}"/>
+					
 				</div>
 	            <div class="clearfix"></div>
 	            <div class="row">

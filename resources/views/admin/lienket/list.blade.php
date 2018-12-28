@@ -51,7 +51,7 @@
                 @if($_GET['type']!='quang-cao')
                 <th>Tên bài viết</th>
                 @endif
-                @if($_GET['type']!='catalog')
+                @if($_GET['type']!='lien-ket')
                 <th>Hình ảnh</th>
                 @endif
                 <!-- <th class="text-center with_dieuhuong">Hoạt động</th> -->
@@ -69,7 +69,7 @@
                 @if($_GET['type']!='quang-cao')
                 <td>{{$item->name}}</td>
                 @endif
-                @if($_GET['type']!='catalog')
+                @if($_GET['type']!='lien-ket')
                 <td><img src="{{ asset('upload/hinhanh/'.$item->photo) }}" onerror="this.src='{{ asset('public/admin_assets/images/no-image.jpg') }}';" class="img_product"  alt="NO PHOTO" /></td>
                 @endif
                 <!-- <td class="text-center with_dieuhuong">

@@ -1,15 +1,15 @@
 
 .slider-category h1{
-	margin-top: 0px;
-	font-size: 22px;
-	text-transform: uppercase;
+    margin-top: 0px;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 .slider-category ._item{
     margin-bottom: 20px;
 }
 .owl-carousel-category .item{
-	margin-left: 10px;
-	margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
 .owl-carousel-category .owl-prev {
@@ -23,13 +23,13 @@
     top: -25px;
 }
 .owl-carousel-category a{
-	color: #B88918;
+    color: #B88918;
 }
 .owl-carousel-category a:hover{
-	color: #fff;
+    color: #fff;
 }
 .owl-carousel-category .owl-next i, .owl-carousel-category .owl-prev i{
-	font-size: 26px;
+    font-size: 26px;
 }
 .vk-menu__mobile li {
     position: relative;
@@ -82,7 +82,7 @@
     text-align: center;
     width: 100%;
     background: rgba(0,0,0,0.7);
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 0px;
     padding: 10px 0;
 }
@@ -93,4 +93,70 @@
     width: 100%;
     float: left;
     margin-bottom: 40px;
+}
+.dropmenux li a{
+    font-size: 13px !important;
+}
+.child-menu{
+    margin-left: 10px;
+}
+.child-menu li{
+    margin-top: 6px;
+}
+.child-menu li a{
+    color: #8c7272 !important;
+    font-size: 13px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 8px !important;
+    text-transform: unset !important;
+}
+.child-menu li a:hover{
+    color: #fff !important;
+}
+.parent-fix{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+/*google translate*/
+#google_translate_element div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.00);
+    color: rgba(255,255,255,0.00);
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+#google_translate_element span {
+    width: 0;
+    height: 0;
+    background-color: rgba(255,255,255,0.00);
+    color: rgba(255,255,255,0.00);
+    display: block;
+    overflow: hidden;
+}
+#google_translate_element {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../images/icon-word6.png');
+    background-color: rgba(255,255,255,0.00);
+    color: rgba(255,255,255,0.00);
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 999999991;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+.goog-te-gadget-icon{
+    display: none !important;
 }
